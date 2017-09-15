@@ -1,0 +1,43 @@
+@import "../param";
+
+.sound {
+  width: 30px;
+  height: 28px;
+  position: fixed;
+  top: $top-1;
+  left: 32px;
+  //left: 110px;
+  cursor: pointer;
+  z-index: $zIndex-20;
+  transition: $transition-1;
+  background: $bg-1;
+}
+
+@media screen and (max-width: $mediaMaxWidth-1) {
+  .sound {
+    top: $top-2;
+    left: 10px;
+  }
+}
+
+.sound i {
+  width: 2px;
+  background: $bg-4;
+  position: absolute;
+}
+.sound.play i {
+  animation: soundPlay 1s infinite alternate;
+}
+
+.sound i:nth-child(1) { height: 12px; left: 0;    animation-delay: 0.05s;}
+.sound i:nth-child(2) { height: 20px; left: 4px;  animation-delay: 0.1s;}
+.sound i:nth-child(3) { height: 16px; left: 8px;  animation-delay: 0.15s;}
+.sound i:nth-child(4) { height: 24px; left: 12px; animation-delay: 0.2s;}
+.sound i:nth-child(5) { height: 28px; left: 16px; animation-delay: 0.25s;}
+.sound i:nth-child(6) { height: 20px; left: 20px; animation-delay: 0.3s;}
+.sound i:nth-child(7) { height: 8px; left: 24px;  animation-delay: 0.35s;}
+
+@keyframes soundPlay {
+  from {height: 30%}
+  to {height: 100%}
+}

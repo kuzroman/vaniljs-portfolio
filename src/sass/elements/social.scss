@@ -1,0 +1,32 @@
+@import "../param";
+
+.social {
+
+  margin-top: 30px;
+
+  & > a {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: $fontSize-1;
+    padding: 8px 18px 6px 50px;
+    margin: 20px 10px 0 0;
+    border-radius: 4px;
+    background: #325c99 no-repeat 20px center;
+    background-size: 15%;
+    color: $color-3;
+    box-shadow: 3px 3px darken($bg-1, $percent-3);
+  }
+
+  .facebook {
+    background-image: url("../img/svg/facebook.svg");
+  }
+  .linkedin {
+    background-color: #1178b3;
+    background-image: url("../img/svg/linkedin.svg");
+  }
+
+  .github {
+    background-image: url("../img/svg/github.svg");
+  }
+
+}

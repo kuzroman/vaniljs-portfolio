@@ -1,0 +1,180 @@
+@import "../param";
+
+.game {
+  //width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding-top: 80px;
+  //position: relative;
+}
+
+.typingCenter {
+  height: 100%;
+  display: table;
+  text-align: center;
+  margin: 0 auto;
+  color: $color-1;
+  position: relative;
+  z-index: $zIndex-1;
+}
+
+.typingCenter div {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+@media screen and (max-width: $mediaMaxWidth-1) {
+  .typingCenter div {
+    vertical-align: top;
+  }
+}
+
+.typingCenter i {
+  opacity: 0;
+  font-size: $fontSize-2;
+  line-height: 30px;
+  font-style: normal;
+}
+
+#shooterMouseArea {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $zIndex-2;
+
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -o-user-select: none;
+}
+
+.shooter {
+  width: 130px;
+  height: 138px;
+  background: url(../img/game/robot.png) no-repeat;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -65px;
+  z-index: $zIndex-1;
+  opacity: 0;
+  transition: top 0.5s, opacity 0.5s;
+}
+
+.shooter.show {
+  top: 85%;
+  opacity: 1;
+}
+
+.bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background: $bg-3;
+  position: absolute;
+  border: 1px dotted $bg-2;
+}
+
+.scoreBord {
+  width: 300px;
+  height: 62px;
+  position: absolute;
+  top: -50px;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.scoreBord.show {
+  opacity: 1;
+  top: 10px;
+}
+
+@media screen and (max-width: $mediaMaxWidth-1) {
+  .scoreBord {
+    width: 200px;
+  }
+  .scoreBord.show {
+    top: $top-2 - 28;
+  }
+}
+
+.timeLimit {
+  float: right;
+}
+
+@media screen and (max-width: $mediaMaxWidth-1) {
+  .timeLimit {
+    position: absolute;
+    left: 10px;
+    bottom: 4px;
+    z-index: $zIndex-1;
+    color: #2f2f2f;
+  }
+}
+
+.timeLimitCounter {
+  display: inline-block;
+  font-size: $fontSize-3;
+  position: relative;
+  top: -3px;
+}
+
+.loader {
+  position: absolute;
+  top: 28px;
+  left: 1%;
+  width: 100%;
+  height: 28px;
+  background: $bg-2;
+  overflow: hidden;
+}
+
+.loaderSlip {
+  width: 100%;
+  height: 100%;
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: $bg-3;
+}
+
+.hiddenWindow {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#resultNameInput {
+  width: 100px;
+  border: 0;
+  padding: 2px 4px;
+  outline: none;
+}
+
+.linkBtn {
+  color: $bg-3;
+  transition: 0.2s;
+}
+
+.linkBtn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+#represent {
+  display: none
+}
+
+.canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

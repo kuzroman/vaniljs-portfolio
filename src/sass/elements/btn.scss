@@ -1,0 +1,34 @@
+@import "../param";
+
+.button {
+  width: 200px;
+  position: absolute;
+  z-index: $zIndex-3;
+  left: 50%;
+  bottom: 100px;
+  margin-left: -120px;
+  background: $bg-2;
+  padding: 10px 20px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 0 darken($bg-1, $percent-3);
+  transition: 0.5s;
+  color: $color-3;
+  font-size: $fontSize-1;
+}
+
+.button.hide {
+  bottom: 0;
+  opacity: 0;
+}
+
+@media screen and (max-width: $mediaMaxWidth-1) {
+  .button {
+    bottom: 10px;
+  }
+}
+@media screen and (max-height: $mediaMaxWidth-1) {
+  .button {
+    display: none;
+  }
+}

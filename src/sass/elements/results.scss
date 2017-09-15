@@ -1,0 +1,110 @@
+@import "../param";
+
+.results {
+  position: absolute;
+  width: 464px;
+  z-index: $zIndex-3;
+  top: 50%;
+  margin-top: -150px;
+  background: darken($bg-1, $percent-1);
+  box-shadow: 5px 5px 0 0 darken($bg-1, $percent-3);
+  left: -500px;
+  opacity: 0;
+
+  & .resultsTable, .leaderTable {
+    width: 100%;
+    display: table;
+  }
+
+  & > div > div {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding: 20px;
+  }
+
+  & h3 {
+    font-size: $fontSize-3;
+    color: $color-3;
+    margin-top: 3px;
+  }
+
+  & ul {
+    margin: 16px auto;
+    width: 320px;
+  }
+
+  & li {
+    min-height: 20px;
+    display: block;
+    line-height: 20px;
+    position: relative;
+    cursor: default;
+    overflow: hidden;
+
+    &:before {
+      content: " ";
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      bottom: 6px;
+      left: 0;
+      border-bottom: 1px dotted $color-1;
+    }
+
+    & > div {
+      float: left;
+      text-align: right;
+      font-style: normal;
+      position: relative;
+      background: darken($bg-1, $percent-1);
+      padding: 0 16px;
+
+      &:nth-child(2) {
+        float: right;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mediaMaxWidth-1) {
+  .results {
+    width: 100%;
+  }
+  .results > div > div {
+    padding: 20px 0;
+  }
+}
+
+#leaders {
+  left: 100%;
+}
+
+.resultsClose {
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  cursor: pointer;
+
+  &:before, &:after {
+    content: " ";
+    width: 80%;
+    height: 2px;
+    background-color: $color-1;
+    position: absolute;
+    top: 50%;
+    transform-origin: 50% 50%;
+    left: 10%;
+  }
+
+  &:before {
+    transform: rotate(45deg);
+    transition: transform .29s cubic-bezier(.5, 0, .3, .9) .1s;
+  }
+  &:after {
+    transform: rotate(-45deg);
+    transition: transform .29s cubic-bezier(.5, 0, .3, .9);
+  }
+}

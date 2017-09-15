@@ -1,0 +1,33 @@
+// фон
+$bg-1: #2f2f2f; // body
+$bg-2: #c60202; // btn, loader, bullet
+$bg-3: #f1ff00; // linkBtn, loaderSlip, bullet
+$bg-4: #ddd; // works-work
+
+// затемнитель (тени)
+$percent-1: 1%;
+$percent-2: 3%;
+$percent-3: 5%;
+$percent-4: 8%;
+
+// text-color, border
+$color-1: #cfcfcf; // body
+$color-2: #2f2f2f; // works-title
+$color-3: #fff; // score, btn
+
+$fontSize-1: 14px; // body, btn
+$fontSize-2: 16px; // typing, nav
+$fontSize-3: 22px; // timer, score
+
+// z-index for page
+$zIndex-1: 10;
+$zIndex-2: 20;
+$zIndex-3: 30;
+// z-index for popup
+$zIndex-10: 100;
+$zIndex-20: 200;
+
+$mediaMaxWidth-1: 480px; // for mobile
+$top-1: 35px;
+$top-2: 10px;
+$transition-1: 0.3s;

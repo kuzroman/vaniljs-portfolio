@@ -1,0 +1,110 @@
+@import "../param";
+
+.topMenu {
+  width: 28px;
+  height: 28px;
+  position: fixed;
+  z-index: $zIndex-20;
+  right: 32px;
+  top: $top-1;
+  cursor: pointer;
+  transition: $transition-1;
+  background: $bg-1;
+}
+
+@media screen and (max-width: $mediaMaxWidth-1) {
+  .topMenu {
+    top: $top-2;
+    right: 10px;
+  }
+}
+
+.topMenu i {
+  width: 100%;
+  height: 2px;
+  background: $bg-4;
+  position: absolute;
+  left: 0
+}
+
+.topMenu i:nth-child(1) {top: 0;   }
+.topMenu i:nth-child(2) {top: 13px;}
+.topMenu i:nth-child(3) {top: 26px;}
+
+.topMenu:not(.close):hover i:nth-child(1) {
+  animation: menuSwing-1 $transition-1 2 alternate;
+}
+.topMenu:not(.close):hover i:nth-child(3) {
+  animation: menuSwing-3 $transition-1 2 alternate;
+}
+
+@keyframes menuSwing-1 { from {top: 0} to {top: 4px} }
+@keyframes menuSwing-3 { from {top: 26px} to {top: 22px} }
+
+
+.topMenu.close i:nth-child(1), .topMenu.close i:nth-child(3) {
+  animation: $transition-1 1 forwards;
+}
+
+.topMenu.close i:nth-child(1) {animation-name: twirl-1;}
+.topMenu.close i:nth-child(2) {display: none;}
+.topMenu.close i:nth-child(3) {animation-name: twirl-2;}
+
+@keyframes twirl-1 {
+  from {transform: rotate(0deg); top:0}
+  to {transform: rotate(45deg); top: 12px}
+}
+@keyframes twirl-2 {
+  from {transform: rotate(0deg); top: 26px}
+  to {transform: rotate(-45deg); top: 12px;}
+}
+
+//////////////////////////////////////////////////////
+
+.topNav {
+  width: 100%;
+  height: 100%;
+  background: $bg-1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $zIndex-10;
+  padding: 10% 0;
+  box-sizing: border-box;
+  transition: $transition-1;
+}
+
+.topNav.hidden {
+  top: -100%
+}
+
+.topNav a {
+  width: 80%;
+  height: 22%; // зависит от колличества строк, но делать чуть меньше, вылазиет за края при сужении экрана на странице work!
+  //height: 20%;
+  background: lighten($bg-1, $percent-2);
+  display: table;
+  margin: 0 auto;
+  box-shadow: 0 0 0 15px darken($bg-1, $percent-2);
+  color: $color-3;
+  text-decoration: none;
+  font-size: $fontSize-2;
+  text-align: center;
+  transition: 0.9s;
+  text-transform: uppercase;
+}
+
+@media screen and (max-height: 300px) {
+  .topNav {
+    padding: 0;
+  }
+}
+
+.topNav a:hover {
+  background: lighten($bg-1, $percent-4);
+}
+
+.topNav span {
+  display: table-cell;
+  vertical-align: middle;
+}

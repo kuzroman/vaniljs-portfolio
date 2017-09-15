@@ -1,0 +1,48 @@
+@import "../param";
+
+.back-to-work {
+  width: 28px;
+  height: 28px;
+  position: fixed;
+  top: $top-1;
+  //left: 50%;
+  right: 85px;
+  cursor: pointer;
+  z-index: $zIndex-1;
+  margin-left: -14px;
+  transition: $transition-1;
+}
+
+@media screen and (max-width: $mediaMaxWidth-1) {
+  .back-to-work {
+    top: $top-2;
+  }
+}
+
+.back-to-work i {
+  width: 8px;
+  height: 8px;
+  background: $bg-4;
+  position: absolute;
+  transition: $transition-1;
+}
+.back-to-work i:nth-child(1) {left: 0; top:0}
+.back-to-work i:nth-child(2) {left: 10px; top:0}
+.back-to-work i:nth-child(3) {left: 20px; top:0}
+.back-to-work i:nth-child(4) {left: 0; top:10px}
+.back-to-work i:nth-child(5) {left: 10px; top:10px}
+.back-to-work i:nth-child(6) {left: 20px; top:10px}
+.back-to-work i:nth-child(7) {left: 0; top:20px}
+.back-to-work i:nth-child(8) {left: 10px; top:20px}
+.back-to-work i:nth-child(9) {left: 20px; top:20px}
+
+.back-to-work:hover {
+  width: 48px;
+  height: 48px;
+}
+.back-to-work:hover i:nth-child(1) {left: 20px; top: 0px}
+//.back-to-work:hover i:nth-child(1) {left: 20px; top: -10px}
+.back-to-work:hover i:nth-child(7) {left: 20px; top: 20px}
+//.back-to-work:hover i:nth-child(7) {left: 20px; top: 30px}
+.back-to-work:hover i:nth-child(3) {left: 30px; top: 10px}
+.back-to-work:hover i:nth-child(9) {left: 40px; top: 10px}

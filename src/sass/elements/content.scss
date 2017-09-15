@@ -1,0 +1,29 @@
+@import "../param";
+
+.content {
+  max-width: 840px;
+  margin: auto;
+  padding: 0 10% 100px;
+  font-size: $fontSize-2;
+  line-height: $fontSize-2 + 10;
+
+  li {
+    list-style: circle;
+    margin-left: 17px;
+  }
+
+  .with-link {
+    line-height: 20px;
+  }
+}
+
+@media screen and (max-width: $mediaMaxWidth-1) {
+  .content {
+    padding: 0 10px;
+  }
+
+  //.content > div {
+  //  padding: 0 2%;
+  //  font-size: $fontSize-1;
+  //}
+}

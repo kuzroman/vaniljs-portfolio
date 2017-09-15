@@ -1,0 +1,32 @@
+@import "../param";
+
+.stripe {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  text-transform: uppercase;
+  padding: 4px 0 2px;
+}
+a {
+  color: $color-3;
+  position: relative;
+  z-index: $zIndex-1;
+  text-decoration: none;
+}
+.stripe:before, .stripe:after {
+  width: 100%;
+  height: 50px;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0; left: -100%;
+  background: lighten($bg-1, $percent-4);
+  transition: 0.2s;
+}
+.stripe:after {
+  top: 50%;
+  left: 100%;
+}
+.stripe:hover:before, .stripe:hover:after {
+  left: 0;
+}
